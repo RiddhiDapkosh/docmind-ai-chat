@@ -69,7 +69,7 @@ export const ingestChunks = createServerFn({ method: "POST" })
 const AskSchema = z.object({
   chatId: z.string().uuid(),
   question: z.string().min(1).max(4000),
-  documentIds: z.array(z.string().uuid()).optional(),
+  documentIds: z.array(z.string().uuid()).nullable().optional(),
 });
 
 export interface AskResult {
@@ -113,7 +113,7 @@ export const askQuestion = createServerFn({ method: "POST" })
     const { data: matches, error: matchErr } = await supabase.rpc("match_document_chunks", {
       query_embedding: queryEmbedding as unknown as string,
       match_user_id: userId,
-      match_document_ids: data.documentIds ?? null,
+      match_document_ids: (data.documentIds ?? undefined) as string[] | undefined,
       match_count: topK,
     });
     if (matchErr) throw matchErr;
