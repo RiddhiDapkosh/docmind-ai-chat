@@ -8,6 +8,7 @@ import { Logo } from "@/components/Logo";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/reset-password")({
+  ssr: false,
   head: () => ({ meta: [{ title: "Reset password — DocMind AI" }] }),
   component: ResetPasswordPage,
 });
