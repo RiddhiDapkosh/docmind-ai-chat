@@ -56,7 +56,43 @@
 
 :root {
   --radius: 0.75rem;
-  /* Ocean Deep — deep navy base, teal accents */
+  /* Ocean Deep — Light */
+  --background: oklch(0.985 0.005 220);
+  --foreground: oklch(0.20 0.04 245);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.04 245);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.04 245);
+  --primary: oklch(0.55 0.09 210);
+  --primary-foreground: oklch(0.985 0.005 220);
+  --secondary: oklch(0.94 0.02 220);
+  --secondary-foreground: oklch(0.25 0.04 240);
+  --muted: oklch(0.94 0.02 220);
+  --muted-foreground: oklch(0.48 0.03 230);
+  --accent: oklch(0.90 0.05 200);
+  --accent-foreground: oklch(0.25 0.04 240);
+  --destructive: oklch(0.60 0.22 25);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.20 0.04 245 / 12%);
+  --input: oklch(0.20 0.04 245 / 14%);
+  --ring: oklch(0.55 0.09 210);
+  --chart-1: oklch(0.55 0.09 210);
+  --chart-2: oklch(0.62 0.10 220);
+  --chart-3: oklch(0.42 0.09 235);
+  --chart-4: oklch(0.72 0.10 190);
+  --chart-5: oklch(0.65 0.12 200);
+  --sidebar: oklch(0.97 0.01 220);
+  --sidebar-foreground: oklch(0.25 0.04 240);
+  --sidebar-primary: oklch(0.55 0.09 210);
+  --sidebar-primary-foreground: oklch(0.985 0.005 220);
+  --sidebar-accent: oklch(0.92 0.03 215);
+  --sidebar-accent-foreground: oklch(0.25 0.04 240);
+  --sidebar-border: oklch(0.20 0.04 245 / 10%);
+  --sidebar-ring: oklch(0.55 0.09 210);
+}
+
+.dark {
+  /* Ocean Deep — Dark */
   --background: oklch(0.19 0.04 245);
   --foreground: oklch(0.985 0.005 220);
   --card: oklch(0.24 0.05 240);
@@ -93,6 +129,9 @@
 
 @layer base {
   html {
+    color-scheme: light;
+  }
+  html.dark {
     color-scheme: dark;
   }
   * {
