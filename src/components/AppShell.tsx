@@ -11,9 +11,12 @@ import {
   Upload,
   Menu,
   X,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/hooks/use-theme";
 
 const nav = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -28,6 +31,7 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const router = useRouter();
   const queryClient = useQueryClient();
+  const { theme, toggle } = useTheme();
 
   const { data: profile } = useQuery({
     queryKey: ["profile"],
@@ -97,6 +101,10 @@ export function AppShell({ children, title }: { children: ReactNode; title?: str
           </div>
           <Button variant="ghost" size="sm" onClick={handleSignOut} className="w-full justify-start gap-2">
             <LogOut className="size-4" /> Sign out
+          </Button>
+          <Button variant="ghost" size="sm" onClick={toggle} className="w-full justify-start gap-2">
+            {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            {theme === "dark" ? "Light mode" : "Dark mode"}
           </Button>
         </div>
       </aside>
