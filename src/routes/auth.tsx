@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Logo } from "@/components/Logo";
 import { toast } from "sonner";
-import { Loader2 } from "lucide-react";
+import { Loader2, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 export const Route = createFileRoute("/auth")({
   ssr: false,
@@ -22,6 +23,7 @@ export const Route = createFileRoute("/auth")({
 
 function AuthPage() {
   const navigate = useNavigate();
+  const { theme, toggle } = useTheme();
   const [mode, setMode] = useState<"signin" | "signup" | "forgot">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -86,6 +88,14 @@ function AuthPage() {
 
   return (
     <div className="min-h-screen flex">
+      <button
+        type="button"
+        onClick={toggle}
+        aria-label="Toggle theme"
+        className="fixed top-4 right-4 z-50 size-10 grid place-items-center rounded-lg border border-border bg-card hover:bg-accent transition-colors"
+      >
+        {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+      </button>
       <div className="hidden lg:flex flex-col justify-between p-12 w-1/2 border-r border-border bg-card/30">
         <Logo />
         <div className="space-y-6 max-w-md">
