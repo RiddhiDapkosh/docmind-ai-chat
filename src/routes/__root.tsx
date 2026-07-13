@@ -79,12 +79,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DocMind AI — Chat with your documents" },
-      { name: "description", content: "Upload PDFs, notes and books. Chat with your knowledge base using AI with verified source citations." },
-      { property: "og:title", content: "DocMind AI" },
-      { property: "og:description", content: "Chat with your own documents using AI." },
+      { title: "DocMind AI — Chat With Your Own Documents Using AI" },
+      { name: "description", content: "Upload PDFs, notes, books and files. Get accurate answers with source citations using Retrieval-Augmented Generation." },
+      { property: "og:title", content: "DocMind AI — Chat With Your Own Documents Using AI" },
+      { property: "og:description", content: "Upload PDFs, notes, books and files. Get accurate answers with source citations using Retrieval-Augmented Generation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "DocMind AI — Chat With Your Own Documents Using AI" },
+      { name: "twitter:description", content: "Upload PDFs, notes, books and files. Get accurate answers with source citations using Retrieval-Augmented Generation." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a41badb2-8ae2-4f25-9fca-c3c37c9fe174" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a41badb2-8ae2-4f25-9fca-c3c37c9fe174" },
     ],
     links: [
       {

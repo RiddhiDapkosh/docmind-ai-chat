@@ -11,10 +11,10 @@ export const Route = createFileRoute("/")({
         content:
           "Upload PDFs, notes, books and files. Get accurate answers with source citations using Retrieval-Augmented Generation.",
       },
-      { property: "og:title", content: "DocMind AI — Chat With Your Documents" },
+      { property: "og:title", content: "DocMind AI — Chat With Your Own Documents Using AI" },
       {
         property: "og:description",
-        content: "Turn any library of documents into a queryable knowledge base. Verifiable answers, every time.",
+        content: "Upload PDFs, notes, books and files. Get accurate answers with source citations using Retrieval-Augmented Generation.",
       },
     ],
   }),
